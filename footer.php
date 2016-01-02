@@ -122,8 +122,8 @@ if(get_option('mlf_demo_site', false)) { ?>
         <br style="clear: both">
         <h4 style="margin-top: 20px;">Get the Theme</h4>
         <ul class="no-bullet">
-            <li><a href="http://conversioninsights.net/modern-accounting-firm-premium/">Download the Free Version</a></li>
-            <li><a href="http://conversioninsights.net/free-wordpress-themes-for-accounting-firms/">Buy the Premium Version</a></li>
+            <li><a href="<?php echo CI_FREE_URL; ?>">Download the Free Version</a></li>
+            <li><a href="<?php echo CI_PREMIUM_URL; ?>">Buy the Premium Version</a></li>
         </ul>
     </div>
     <div id="imgPreload">
