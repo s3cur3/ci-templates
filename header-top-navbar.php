@@ -3,7 +3,7 @@ $name = get_bloginfo('name');
 $brandHTML = $name;
 $imgURL = get_option('company_logo', false);
 $svgURL = get_option('svg_logo', false);
-if( $imgURL ) {
+if($imgURL && strpos($imgURL, '.') !== false) {
     $width = get_option('logo_width');
     $height = get_option('logo_height');
     $brandHTML = "<img src=\"{$imgURL}\" width=\"{$width}\" height=\"{$height}\" alt=\"{$name}\">";
@@ -16,7 +16,6 @@ $navbarType = "static";
 if(get_option('navbar_fixed', false)) {
     $navbarType = "fixed";
 }
-
 ?>
 <!-- HEADER-TOP-NAVBAR.PHP -->
 <header class="banner navbar navbar-default navbar-<?php echo $navbarType; ?>-top" role="banner">
