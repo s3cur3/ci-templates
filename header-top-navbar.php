@@ -1,17 +1,4 @@
 <?php
-$name = get_bloginfo('name');
-$brandHTML = $name;
-$imgURL = get_option('company_logo', false);
-$svgURL = get_option('svg_logo', false);
-if($imgURL && strpos($imgURL, '.') !== false) {
-    $width = get_option('logo_width');
-    $height = get_option('logo_height');
-    $brandHTML = "<img src=\"{$imgURL}\" width=\"{$width}\" height=\"{$height}\" alt=\"{$name}\">";
-    if( $svgURL ) {
-        $brandHTML = "<img src=\"{$svgURL}\" onerror=\"this.onerror=null; this.src='{$imgURL}'\" width=\"{$width}\" height=\"{$height}\" alt=\"{$name}\">";
-    }
-}
-
 $navbarType = "static";
 if(get_option('navbar_fixed', false)) {
     $navbarType = "fixed";
@@ -27,7 +14,7 @@ if(get_option('navbar_fixed', false)) {
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="<?php echo home_url(); ?>/"><?php echo $brandHTML; ?></a>
+            <a class="navbar-brand" href="<?php echo home_url(); ?>/"><?php echo ci_get_logo_html(); ?></a>
         </div>
 
         <nav class="collapse navbar-collapse" role="navigation"> <?php

@@ -1,11 +1,3 @@
-<?php
-$name = get_bloginfo('name');
-$brandHTML = $name;
-$imgURL = get_option('company_logo', false);
-if ($imgURL) {
-    $brandHTML = "<img src=\"{$imgURL}\" alt=\"{$name}\" />";
-}
-?>
 <!-- Landing page navigation -->
 <header class="banner navbar navbar-default navbar-static-top" role="banner">
     <div class="header-container">
@@ -16,7 +8,7 @@ if ($imgURL) {
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="<?php echo home_url(); ?>/"><?php echo $brandHTML; ?></a>
+            <a class="navbar-brand" href="<?php echo home_url(); ?>/"><?php echo ci_get_logo_html(); ?></a>
         </div>
 
         <nav class="collapse navbar-collapse" role="navigation">
