@@ -14,14 +14,14 @@ $staff = ciGetAllStaff(100, $contentLength);
         <div id="post-<?php echo $staffMember['id']; ?>" class="main individual-post mb35 col-md-6" itemscope itemtype="http://schema.org/Person"><?php
             if( $staffMember['imgURL'] != '' ) { ?>
                 <div class="text-center">
-            <a href="<?php echo $staffMember['url']; ?>" title="<?php echo $staffMember['title']; ?>">
-                <img class="mb0" src="<?php echo $staffMember['imgURL']; ?>" alt="<?php echo $staffMember['title']; ?>" width="<?php echo $staffMember['imgWidth']; ?>" height="<?php echo $staffMember['imgHeight']; ?>" itemprop="image">
+            <a href="<?php echo $staffMember['url']; ?>" title="<?php echo $staffMember['title']; ?>" class="staff-photo-link">
+                <img class="mb0 staff-photo" src="<?php echo $staffMember['imgURL']; ?>" alt="<?php echo $staffMember['title']; ?>" width="<?php echo $staffMember['imgWidth']; ?>" height="<?php echo $staffMember['imgHeight']; ?>" itemprop="image">
                 </a><?php
                 if( !ciStaffSocialURLsAreEmpty($staffMember['socialURLs']) )
                     ciPrintSocialLinks( $staffMember['socialURLs'], 'in-staff-list' ); ?>
                 </div><?php
             } ?>
-            <h2><a href="<?php echo $staffMember['url']; ?>" title="<?php echo $staffMember['title']; ?>" itemprop="name"><?php echo $staffMember['title']; ?></a></h2> <?php
+            <h2><a href="<?php echo $staffMember['url']; ?>" title="<?php echo $staffMember['title']; ?>" itemprop="name" class="staff-name"><?php echo $staffMember['title']; ?></a></h2> <?php
             echo $staffMember['content'];
 
             if( strlen(strip_tags($staffMember['fullContent'], '<p>')) > strlen($staffMember['content'])) {?>
